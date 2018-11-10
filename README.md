@@ -27,9 +27,9 @@ public class HelloWorld {
         try {
             Mcu.start();
             // continue with your logic...
-		} catch (McuStartupException e) {
-			// somenthing were wrong...
-		}
+	} catch (McuStartupException e) {
+	    // somenthing were wrong...
+	}
     }
 }
 ```
