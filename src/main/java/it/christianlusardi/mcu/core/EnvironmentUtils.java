@@ -5,12 +5,18 @@ import org.slf4j.LoggerFactory;
 
 import it.christianlusardi.mcu.constants.ConfiguratorConstants;
 import it.christianlusardi.mcu.constants.EnvironmentConstants;
+import it.christianlusardi.mcu.constants.GlobalConstants;
 
 public class EnvironmentUtils {
 	
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnvironmentUtils.class);
 
+	
+	
+	private EnvironmentUtils() {
+		throw new IllegalAccessError(GlobalConstants.STANDARD_MESSAGE_UTILITY_CLASS);
+	}
 	
 	
 	/**
@@ -21,9 +27,18 @@ public class EnvironmentUtils {
 		String env = System.getenv(EnvironmentConstants.MCU_ENV_VAR_NAME);
 		
 		if (isBlank(env)) {
-			LOGGER.info("Profile not set");
+			LOGGER.info("System enviroment not set. Try with System property");
+			
+			env = System.getProperty(EnvironmentConstants.MCU_ENV_VAR_NAME);
+			
+			if (isBlank(env)) {
+				LOGGER.info("Profile not set");
+			} else {
+				LOGGER.info("Profile set to: {} with system property", env);
+			}
+			
 		} else {
-			LOGGER.info("Profile set to: {}", env);
+			LOGGER.info("Profile set to: {} with enviroment variable", env);
 		}
 		
 		return env;

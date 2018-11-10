@@ -270,10 +270,11 @@ public class Configurator {
 		double result;
 		String strResult = prop.getProperty(propertyName);
 		
-		if (strResult.isEmpty())
+		if (strResult.isEmpty()) {
 			throw new NullPointerException("Property "+propertyName+" is empty.");
-		else
-			result = Double.parseDouble(strResult);
+		} else {
+			result = Double.parseDouble(strResult.replace(',', '.'));
+		}
 		
 		return result;
 	}

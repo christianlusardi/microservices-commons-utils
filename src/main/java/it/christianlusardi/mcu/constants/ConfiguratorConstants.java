@@ -2,6 +2,8 @@ package it.christianlusardi.mcu.constants;
 
 import it.christianlusardi.mcu.core.Configurator;
 
+
+
 /**
  * Constants for {@link Configurator}
  * 
