@@ -3,8 +3,6 @@ package test.christianlusardi.mcu;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import it.christianlusardi.mcu.core.Configurator;
 import it.christianlusardi.mcu.core.Mcu;
@@ -12,8 +10,6 @@ import it.christianlusardi.mcu.exceptions.McuStartupException;
 import test.christianlusardi.mcu.constants.TestConstants;
 
 public class TestMcu {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(TestEnvironmentUtils.class);
 
 	@Test
 	public void testStart() {
