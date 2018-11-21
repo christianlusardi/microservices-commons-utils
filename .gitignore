@@ -24,3 +24,9 @@ hs_err_pid*
 
 # Maven
 /target
+
+#elicpse
+
+.project
+.classpath
+.settins/
