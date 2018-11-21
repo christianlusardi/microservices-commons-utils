@@ -68,7 +68,7 @@ public class Configurator {
 	 * 
 	 * @param pathParam the configuration file path
 	 * 
-	 * @throws IOException
+	 * @throws IOException IO problems
 	 */
 	public static void initialize(String pathParam) throws IOException {
 
@@ -113,8 +113,10 @@ public class Configurator {
 	 * Funzione che ritorna il valore della proprietà indicata.
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
-	 * @return {@link int} valore della proprietà
-	 * @throws NullPointerException
+	 * 
+	 * @return int valore della proprietà
+	 * 
+	 * @throws NullPointerException when property not found
 	 */
 	public static int getIntValue(String propertyName) {
 		int result;
@@ -157,8 +159,10 @@ public class Configurator {
 	 * Funzione che ritorna il valore della proprietà indicata.
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
+	 * 
 	 * @return {@link long} valore della proprietà
-	 * @throws {@link NullPointerException}
+	 * 
+	 * @throws NullPointerException expetion when property not found
 	 */
 	public static long getLongValue(String propertyName) {
 		long result;
@@ -201,8 +205,10 @@ public class Configurator {
 	 * Funzione che ritorna il valore della proprietà indicata.
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
+	 * 
 	 * @return {@link float} valore della proprietà
-	 * @throws NullPointerException
+	 * 
+	 * @throws NullPointerException exception when property not found
 	 */
 	public static float getFloatValue(String propertyName) {
 		float result;
@@ -246,7 +252,7 @@ public class Configurator {
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
 	 * @return {@link double} valore della proprietà
-	 * @throws NullPointerException
+	 * @throws NullPointerException exception when property not found
 	 */
 	public static double getDoubleValue(String propertyName) {
 		double result;

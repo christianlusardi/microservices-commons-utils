@@ -26,7 +26,7 @@ public class Mcu {
 	
 	/**
 	 * 
-	 * @throws McuStartupException
+	 * @throws McuStartupException exception when configuration file not found or IO problems
 	 */
 	public static void start() throws McuStartupException {
 		//insert logger here pls ;)

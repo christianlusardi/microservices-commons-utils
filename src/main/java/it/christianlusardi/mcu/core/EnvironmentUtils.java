@@ -19,7 +19,7 @@ public class EnvironmentUtils {
 	
 	/**
 	 * 
-	 * @return
+	 * @return {@link String} the environment profile name
 	 */
 	public static String getEnvironmentProfile() {
 		String env = System.getenv(EnvironmentConstants.MCU_ENV_VAR_NAME);
@@ -46,8 +46,9 @@ public class EnvironmentUtils {
 	
 	/**
 	 * 
-	 * @param env
-	 * @return
+	 * @param env the environment name
+	 * 
+	 * @return {@link String} the configuration file name
 	 */
 	public static String getConfigurationFileName(String env) {
 		String name = null;
