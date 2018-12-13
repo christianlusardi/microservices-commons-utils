@@ -277,5 +277,50 @@ public class Configurator {
 		return result;
 
 	}
+	
+	
+	
+	/**
+	 * Funzione che ritorna il valore della proprietà indicata.
+	 * 
+	 * @param propertyName {@link String} nome della proprietà
+	 * @return {@link boolean} valore della proprietà
+	 * @throws NullPointerException
+	 */
+	public static boolean getBooleanValue(String propertyName) {
+		boolean result;
+		String strResult = prop.getProperty(propertyName);
+
+		if (strResult.isEmpty()) {
+			throw new NullPointerException("Property " + propertyName + " is empty.");
+		} else {
+			result = Boolean.valueOf(strResult);
+		}
+
+		return result;
+	}
+	
+	
+	
+	/**
+	 * Funzione che ritorna il valore della proprietà indicata. In caso di campo non
+	 * valorizzato, verrà restituito il valore
+	 * indicato di default come parametro.
+	 * 
+	 * @param propertyName {@link String} nome della proprietà
+	 * @param defaultValue {@link boolean} valore di default
+	 * @return {@link boolean} valore della proprietà
+	 */
+	public static boolean getBooleanValue(String propertyName, boolean defaultValue) {
+		boolean result;
+		String strResult = prop.getProperty(propertyName);
+
+		if (strResult.isEmpty())
+			result = defaultValue;
+		else
+			result = Boolean.valueOf(strResult);
+
+		return result;
+	}
 
 }
