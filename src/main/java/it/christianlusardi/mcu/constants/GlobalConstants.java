@@ -1,6 +1,5 @@
 package it.christianlusardi.mcu.constants;
 
-
 /**
  * Global constants for Mcu
  * 
@@ -9,11 +8,12 @@ package it.christianlusardi.mcu.constants;
  *
  */
 public class GlobalConstants {
-	
-	
+
 	public static final String STANDARD_MESSAGE_UTILITY_CLASS = "Utility class";
-	
-	
+
+	/**
+	 * Private constructor for an utility class
+	 */
 	private GlobalConstants() {
 		throw new IllegalAccessError(STANDARD_MESSAGE_UTILITY_CLASS);
 	}
