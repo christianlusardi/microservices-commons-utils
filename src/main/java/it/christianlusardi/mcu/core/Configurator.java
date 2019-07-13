@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import it.christianlusardi.mcu.constants.GlobalConstants;
 import it.christianlusardi.mcu.exceptions.ConfigurationFileNotFoundException;
+import it.christianlusardi.mcu.exceptions.PropertyKeyNotFoundException;
 
 /**
  * Configuratore generale delle proprietà. Questo oggetto consente, una volta
@@ -102,15 +103,15 @@ public class Configurator {
 	 * 
 	 * @return int valore della proprietà
 	 * 
-	 * @throws NullPointerException when property not found
+	 * @throws PropertyKeyNotFoundException when property not found
 	 */
-	public static int getIntValue(String propertyName) {
+	public static int getIntValue(String propertyName) throws PropertyKeyNotFoundException {
 		int result;
 
 		String strResult = prop.getProperty(propertyName);
 
 		if (strResult == null || strResult.isEmpty()) {
-			throw new NullPointerException("Property " + propertyName + " is empty.");
+			throw new PropertyKeyNotFoundException("Property " + propertyName + " is empty.");
 		} else {
 			result = Integer.parseInt(strResult);
 		}
@@ -148,15 +149,15 @@ public class Configurator {
 	 * 
 	 * @return {@link long} valore della proprietà
 	 * 
-	 * @throws NullPointerException expetion when property not found
+	 * @throws PropertyKeyNotFoundException expetion when property not found
 	 */
-	public static long getLongValue(String propertyName) {
+	public static long getLongValue(String propertyName) throws PropertyKeyNotFoundException {
 		long result;
 
 		String strResult = prop.getProperty(propertyName);
 
 		if (strResult == null || strResult.isEmpty()) {
-			throw new NullPointerException("Property " + propertyName + " is empty.");
+			throw new PropertyKeyNotFoundException("Property " + propertyName + " is empty.");
 		} else {
 			result = Long.parseLong(strResult);
 		}
@@ -194,15 +195,15 @@ public class Configurator {
 	 * 
 	 * @return {@link float} valore della proprietà
 	 * 
-	 * @throws NullPointerException exception when property not found
+	 * @throws PropertyKeyNotFoundException exception when property not found
 	 */
-	public static float getFloatValue(String propertyName) {
+	public static float getFloatValue(String propertyName) throws PropertyKeyNotFoundException {
 		float result;
 
 		String strResult = prop.getProperty(propertyName);
 
 		if (strResult == null || strResult.isEmpty()) {
-			throw new NullPointerException("Property " + propertyName + " is empty.");
+			throw new PropertyKeyNotFoundException("Property " + propertyName + " is empty.");
 		} else {
 			result = Float.parseFloat(strResult);
 		}
@@ -238,15 +239,15 @@ public class Configurator {
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
 	 * @return {@link double} valore della proprietà
-	 * @throws NullPointerException exception when property not found
+	 * @throws PropertyKeyNotFoundException exception when property not found
 	 */
-	public static double getDoubleValue(String propertyName) {
+	public static double getDoubleValue(String propertyName) throws PropertyKeyNotFoundException {
 		double result;
 
 		String strResult = prop.getProperty(propertyName);
 
 		if (strResult == null || strResult.isEmpty()) {
-			throw new NullPointerException("Property " + propertyName + " is empty.");
+			throw new PropertyKeyNotFoundException("Property " + propertyName + " is empty.");
 		} else {
 			result = Double.parseDouble(strResult.replace(',', '.'));
 		}
@@ -285,14 +286,14 @@ public class Configurator {
 	 * 
 	 * @param propertyName {@link String} nome della proprietà
 	 * @return {@link boolean} valore della proprietà
-	 * @throws NullPointerException
+	 * @throws PropertyKeyNotFoundException
 	 */
-	public static boolean getBooleanValue(String propertyName) {
+	public static boolean getBooleanValue(String propertyName) throws PropertyKeyNotFoundException {
 		boolean result;
 		String strResult = prop.getProperty(propertyName);
 
 		if (strResult.isEmpty()) {
-			throw new NullPointerException("Property " + propertyName + " is empty.");
+			throw new PropertyKeyNotFoundException("Property " + propertyName + " is empty.");
 		} else {
 			result = Boolean.valueOf(strResult);
 		}
