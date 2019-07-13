@@ -9,14 +9,18 @@ import it.christianlusardi.mcu.constants.GlobalConstants;
 
 public class EnvironmentUtils {
 
+	/**
+	 * The logger
+	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnvironmentUtils.class);
 
+	/**
+	 * Private constructor for an utility class
+	 */
 	private EnvironmentUtils() {
 		throw new IllegalAccessError(GlobalConstants.STANDARD_MESSAGE_UTILITY_CLASS);
 	}
-	
-	
-	
+
 	/**
 	 * 
 	 * @return {@link String} the environment profile name
@@ -41,9 +45,7 @@ public class EnvironmentUtils {
 
 		return env;
 	}
-	
-	
-	
+
 	/**
 	 * 
 	 * @param env the environment name
@@ -63,9 +65,7 @@ public class EnvironmentUtils {
 
 		return name;
 	}
-	
-	
-	
+
 	/**
 	 * <p>
 	 * Checks if a CharSequence is empty (""), null or whitespace only.
